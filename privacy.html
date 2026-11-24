@@ -36,48 +36,62 @@
     <h1>豆夹 Beadit 隐私政策</h1>
     <p>Beadit Privacy Policy</p>
   </header>
-  <p class="date">生效日期 Effective: 2026-10-24</p>
+  <p class="date">生效日期 Effective: 2026-11-24</p>
 
-  <div class="hl"><strong>简而言之：</strong>豆夹不收集你的任何数据。你的照片全程只在你自己的设备上处理，永不上传。<br>
-  <strong>In short:</strong> Beadit collects no data. Your photos are processed entirely on your device and never uploaded.</div>
+  <div class="hl"><strong>简而言之：</strong>豆夹不做用户画像，没有广告、统计 SDK 与追踪代码。生成图纸时，你的照片会上传到服务器，交由 AI 服务转换成像素画图纸；照片与结果仅用于你本人的生成任务。<br>
+  <strong>In short:</strong> Beadit builds no user profiles and contains no ads, analytics SDKs, or trackers. When you generate a pattern, your photo is uploaded and converted into a pixel-art pattern by an AI service; your photo and its results are used only for your own generation jobs.</div>
 
-  <h2>1. 我们不收集数据<span class="en">We Collect No Data</span></h2>
+  <h2>1. 我们收集哪些信息<span class="en">What Information We Collect</span></h2>
   <div class="card">
-    <p>豆夹 App 内没有任何网络请求、分析统计 SDK、广告组件或追踪代码。我们不收集、不存储、不传输任何个人信息，也无法识别单个用户。</p>
-    <p>Beadit contains no network requests, analytics SDKs, advertising components, or tracking code. We do not collect, store, or transmit any personal information, and we cannot identify individual users.</p>
+    <p>豆夹只收集运行所必需的信息：微信登录返回的 openid（用于识别你的账号）、你主动保存的资料与作品、AI 生成任务记录（规格、状态、积分消耗、时间），以及购买积分的订单结果。我们没有手机号、位置、通讯录等字段，也接不到这些数据。</p>
+    <p>Beadit collects only what it needs to work: the openid returned by WeChat login (to identify your account), the profile and works you choose to save, AI job records (spec, status, credit cost, timestamps), and payment outcomes of credit purchases. We have no fields for phone numbers, location, or contacts, and no access to them.</p>
   </div>
 
-  <h2>2. 照片全端侧处理<span class="en">On-Device Photo Processing</span></h2>
+  <h2>2. 照片与 AI 生成<span class="en">Photos &amp; AI Generation</span></h2>
   <div class="card">
-    <p>你导入的照片在生成图纸的全过程中（风格化、量化、编辑、清单、导出）只在设备内存与本地存储中处理，App 不会将照片或任何中间数据发送到任何服务器。断网状态下全部功能可用。</p>
-    <p>Photos you import are processed entirely in your device's memory and local storage throughout the entire pipeline (stylization, quantization, editing, material list, export). Nothing is sent to any server. All features work offline.</p>
+    <p>你提交的照片会先在设备上压缩为不超过 512 像素的 JPEG，再上传到豆夹服务器，并交由第三方 AI 图像服务（MiniMax）按「转换为像素画」的指令生成结果；结果量化为拼豆图纸后保存在服务端，通过 24 小时内有效的签名链接提供给你本人。</p>
+    <p>照片、生成结果与图纸仅用于你的生成任务及相关账务（如失败退款的核验）；豆夹不会将它们用于模型训练、用户分析或任何其他用途。</p>
+    <p>The photo you submit is first compressed on your device to a JPEG of at most 512 pixels, then uploaded to Beadit's server and passed to a third-party AI image service (MiniMax) with the instruction to convert it into pixel art. The result is quantized into a bead pattern, stored server-side, and served to you alone through signed links valid for 24 hours.</p>
+    <p>Your photos, generations, and patterns are used only for your own jobs and the related bookkeeping (such as refund verification on failure). Beadit never uses them for model training, user analytics, or any other purpose.</p>
   </div>
 
-  <h2>3. 本地存储<span class="en">Local Storage</span></h2>
+  <h2>3. 内容安全检测<span class="en">Content Safety</span></h2>
   <div class="card">
-    <p>你的偏好设置、编辑器草稿与图纸仅保存在设备本地：卸载 App 即随之清除。唯一例外：免费额度的使用记录保存在系统钥匙串中，卸载重装后不会重置（防止重复领取免费额度），该记录不含任何个人身份信息。</p>
-    <p>Your preferences, drafts, and patterns are stored locally on your device and removed when you uninstall the app. The only exception: free-quota usage is recorded in the system Keychain so it survives reinstalls (preventing duplicate free quota). That record contains no personal identity information.</p>
+    <p>照片在进入生成流程前，会经微信内容安全接口检测：送检的是压缩后的图片，检测完成即丢弃，不存储、不留档。</p>
+    <p>Before generation, photos are checked through WeChat's content-safety API. Only the compressed image is submitted; it is discarded right after the check and never stored.</p>
   </div>
 
-  <h2>4. 订阅与支付<span class="en">Subscriptions &amp; Payments</span></h2>
+  <h2>4. 第三方服务<span class="en">Third-Party Services</span></h2>
   <div class="card">
-    <p>订阅的购买、续订与退款全部由 Apple 通过你的 Apple 账户处理，豆夹不接触、也收不到你的任何支付信息。订阅状态由 Apple 管理，你可在系统「设置 &gt; Apple 账户 &gt; 订阅」中查看或取消。</p>
-    <p>Purchases, renewals, and refunds are handled entirely by Apple through your Apple account. Beadit never receives your payment information. Manage or cancel in Settings &gt; Apple Account &gt; Subscriptions.</p>
+    <p>豆夹仅因功能必要接入以下第三方：微信（登录、内容安全检测、小程序支付）、MiniMax（AI 图像生成）、阿里云（服务器与对象存储 / CDN）。除上述服务外，你的数据不会流向任何其他第三方；传输过程采用加密连接。</p>
+    <p>Beadit integrates only these third parties, as functions require: WeChat (login, content safety, in-mini-program payments), MiniMax (AI image generation), and Alibaba Cloud (servers, object storage / CDN). Beyond these, your data goes to no one else, and all transfers use encrypted connections.</p>
   </div>
 
-  <h2>5. 儿童隐私<span class="en">Children's Privacy</span></h2>
+  <h2>5. 本地存储<span class="en">Local Storage</span></h2>
   <div class="card">
-    <p>豆夹的年龄分级为 4+。App 不收集任何年龄段的个人数据，包括儿童。家长与孩子可以放心共同使用。</p>
-    <p>Beadit is rated 4+. The app collects no personal data from anyone, including children. Safe for families to use together.</p>
+    <p>你的偏好设置、编辑器草稿与导入的原图保存在设备本地：卸载 App 即随之清除。唯一例外：免费额度的使用记录保存在系统钥匙串中，卸载重装后不会重置（防止重复领取免费额度），该记录不含任何个人身份信息。</p>
+    <p>Your preferences, drafts, and imported originals stay on your device and are removed when you uninstall the app. The only exception: free-quota usage is recorded in the system Keychain so it survives reinstalls (preventing duplicate free quota). That record contains no personal identity information.</p>
   </div>
 
-  <h2>6. 政策变更<span class="en">Changes to This Policy</span></h2>
+  <h2>6. 订阅、积分与支付<span class="en">Subscriptions, Credits &amp; Payments</span></h2>
+  <div class="card">
+    <p>App 内订阅由 Apple 通过你的 Apple 账户处理；小程序内购买积分通过微信支付完成。豆夹只收到支付结果通知，不接触、也收不到你的银行卡等支付信息。积分余额与消耗记录保存在你的账号下；AI 生成失败时，本次消耗的积分会自动退还。</p>
+    <p>Subscriptions in the app are handled entirely by Apple through your Apple account; credit purchases in the mini program go through WeChat Pay. Beadit receives only payment outcomes and never sees your card details. Credit balances and usage live under your account; when an AI job fails, the credits spent on it are refunded automatically.</p>
+  </div>
+
+  <h2>7. 儿童隐私<span class="en">Children's Privacy</span></h2>
+  <div class="card">
+    <p>豆夹的年龄分级为 4+。我们不主动收集儿童的个人信息；照片上传只发生在主动使用生成功能的时候。</p>
+    <p>Beadit is rated 4+. We do not actively collect personal information from children; photos are uploaded only when the generation feature is deliberately used.</p>
+  </div>
+
+  <h2>8. 政策变更<span class="en">Changes to This Policy</span></h2>
   <div class="card">
     <p>如本政策发生实质变更，我们将更新本页面的生效日期。继续使用 App 即表示接受修订后的政策。</p>
     <p>If this policy materially changes, we will update the effective date on this page. Continued use of the app constitutes acceptance of the revised policy.</p>
   </div>
 
-  <h2>7. 联系我们<span class="en">Contact</span></h2>
+  <h2>9. 联系我们<span class="en">Contact</span></h2>
   <div class="card">
     <p>隐私相关问题：string.shi@qq.com</p>
     <p>Privacy questions: string.shi@qq.com</p>
